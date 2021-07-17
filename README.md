@@ -1,37 +1,76 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
-# RoboND-Go-Chase-It
+# RoboND-Where-Am-I
 The **Go-Chase-It** is part of RoboND ROS Essentials. The purpose is to Design and build a mobile robot, and house it in a world.
 Then, program a robot with C++ nodes in ROS to chase white colored ball.
 
+# Result
+<img src="images/result.gif"/>
+
 ### Directory Structure
 ```
-    .RoboND-Go-Chase-It                # Go Chase It Project
-    ├── my_robot                       # my_robot package                   
-    │   ├── launch                     # launch folder for launch files   
-    │   │   ├── robot_description.launch
-    │   │   ├── world.launch
-    │   ├── meshes                     # meshes folder for sensors
-    │   │   ├── hokuyo.dae
-    │   ├── urdf                       # urdf folder for xarco files
-    │   │   ├── my_robot.gazebo
-    │   │   ├── my_robot.xacro
-    │   ├── world                      # world folder for world files
-    │   │   ├── <yourworld>.world
-    │   ├── CMakeLists.txt             # compiler instructions
-    │   ├── package.xml                # package info
-    ├── ball_chaser                    # ball_chaser package                   
-    │   ├── launch                     # launch folder for launch files   
-    │   │   ├── ball_chaser.launch
-    │   ├── src                        # source folder for C++ scripts
-    │   │   ├── drive_bot.cpp
-    │   │   ├── process_images.cpp
-    │   ├── srv                        # service folder for ROS services
-    │   │   ├── DriveToTarget.srv
-    │   ├── CMakeLists.txt             # compiler instructions
-    │   ├── package.xml                # package info                  
-    └── model      
-        
+.RoboND-Where-Am-I
+├── ball_chaser
+│   ├── CMakeLists.txt
+│   ├── launch
+│   │   └── ball_chaser.launch
+│   ├── package.xml
+│   ├── src
+│   │   ├── drive_bot.cpp
+│   │   └── process_image.cpp
+│   └── srv
+│       └── DriveToTarget.srv
+├── images
+│   ├── output.png
+│   └── result.gif
+├── model
+│   ├── Building
+│   │   ├── model.config
+│   │   └── model.sdf
+│   ├── my_ball
+│   │   ├── model.config
+│   │   └── model.sdf
+│   └── table
+│       ├── model-1_2.sdf
+│       ├── model-1_3.sdf
+│       ├── model-1_4.sdf
+│       ├── model.config
+│       └── model.sdf
+├── my_robot
+│   ├── CMakeLists.txt
+│   ├── config
+│   │   ├── base_local_planner_params.yaml
+│   │   ├── costmap_common_params.yaml
+│   │   ├── global_costmap_params.yaml
+│   │   └── local_costmap_params.yaml
+│   ├── launch
+│   │   ├── amcl.launch
+│   │   ├── robot_description.launch
+│   │   └── world.launch
+│   ├── maps
+│   │   ├── map.pgm
+│   │   └── map.yaml
+│   ├── meshes
+│   │   ├── hokuyo.dae
+│   │   ├── realsense.dae
+│   │   └── wheel.dae
+│   ├── package.xml
+│   ├── rviz
+│   │   └── my_robot.rviz
+│   ├── urdf
+│   │   ├── my_robot.gazebo
+│   │   └── my_robot.xacro
+│   └── worlds
+│       ├── empty.world
+│       └── my_world.world
+├── README.md
+└── teleop_twist_keyboard
+    ├── CHANGELOG.rst
+    ├── CMakeLists.txt
+    ├── package.xml
+    ├── README.md
+    └── teleop_twist_keyboard.py
+    
 ```
 ### Steps to launch the simulation
 
