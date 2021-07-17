@@ -1,8 +1,7 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # RoboND-Where-Am-I
-The **Go-Chase-It** is part of RoboND ROS Essentials. The purpose is to Design and build a mobile robot, and house it in a world.
-Then, program a robot with C++ nodes in ROS to chase white colored ball.
+The **Where-Am-I** is part of RoboND ROS Essentials. The purpose is to Utilize the ROS AMCL package and the Tele-Operation / Navigation Stack to localize the robot Explore, add, and tune specific parameters corresponding to each package to achieve the best possible localization results.
 
 # Result
 <img src="images/result.gif"/>
@@ -85,15 +84,17 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ git clone https://github.com/vinayakkankanwadi/RoboND-Go-Chase-It.git
+$ git clone https://github.com/vinayakkankanwadi/RoboND-Where-Am-I.git
 ```
 
-#### Step 3 add Model Library and custom models
-```sh
-$ cd $HOME
-$ git clone https://github.com/osrf/gazebo_models
-$ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$HOME/gazebo_models:$HOME/catkin_ws/src/RoboND-Go-Chase-It/model
-
+#### Step 3 Dependencies for Running Locally
+```
+ - amcl, move_base, map-server packages.  
+ - $ sudo apt-get install ros-<distro>-navigation
+ - $ sudo apt-get install ros-<distro>-map-server  
+ - $ sudo apt-get install ros-<distro>-move-base  
+ - $ sudo apt-get install ros-<distro>-amcl  
+ - Used ROS version - melodic
 ```
 
 #### Step 4 Compile the code
@@ -104,26 +105,45 @@ $ source devel/setup.bash
 ```
 
 #### Step 5 Run the Simulation 
-##### in terminal 1:
+##### In Terminal 1:
 
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
 $ roslaunch my_robot world.launch
 
+The following nodes are launched including amcl, map_server, move_base, rviz
+/amcl
+/gazebo
+/gazebo_gui
+/joint_state_publisher
+/map_server
+/move_base
+/robot_state_publisher
+/rosout
+/rviz
+
 ```
 
-##### in terminal 2:
-
+##### In Terminal 2:
 ```sh
-$ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch ball_chaser ball_chaser.launch
+$ cd $HOME/catkin_ws
+$ source devel/setup.bash
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+Robot will localize itself after being tele-operated in the world.
 
 ```
+##### In Gazebo:
+```
+Move Robot 
+Robot will localize itself after being moved in the world.
+```
 
-##### in Gazebo:
-
-move the white ball in front of the robot and have fun.
-
+##### In Rviz:
+```
+Click 2D Nav Goal 
+Robot will localize itself after being given nav_goal target.
+```
 
 # License
 MIT license
