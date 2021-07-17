@@ -1,7 +1,7 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # RoboND-Where-Am-I
-The **Where-Am-I** is part of RoboND ROS Essentials. The purpose is to Utilize the ROS AMCL package and the Tele-Operation / Navigation Stack to localize the robot Explore, add, and tune specific parameters corresponding to each package to achieve the best possible localization results.
+The **Where-Am-I** is part of RoboND Localization. The purpose is to Utilize the ROS AMCL package and the Tele-Operation / Navigation Stack to localize the robot Explore, add, and tune specific parameters corresponding to each package to achieve the best possible localization results.
 
 # Result
 <img src="images/result.gif"/>
