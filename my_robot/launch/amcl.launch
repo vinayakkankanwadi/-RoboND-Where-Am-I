@@ -4,8 +4,6 @@
 <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
     <param name="frame_id" value="map"/>
 </node>
-<node pkg="tf" type="static_transform_publisher" name="map_to_odom"
-    args="0 0 0.1 0 0 0 1.0 /map /odom 100" />
 <node pkg="tf" type="static_transform_publisher" name="odom_robot_footprint"
     args="0 0 0.1 0 0 0 1.0 /odom /robot_footprint 100" />
 
